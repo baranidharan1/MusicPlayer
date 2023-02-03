@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import ProfilePage from './Page/ProfilePage';
+import SideBar from '../src/components/sideBar';
+import AppTopBar from '../src/components/AppTopBar';
+import Player from './components/Player';
+import { Routes, Route } from 'react-router-dom';
+import InvitePage from './Page/InvitePage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app-top-bar">
+        <AppTopBar />
+      </div>
+      <div className="side-nav-bar">
+        <SideBar />
+      </div>
+      <div className="content-container">
+          <Routes>
+            <Route exact path='/' element={ <ProfilePage /> } />
+            <Route exact path='/invite' element={ <InvitePage /> } />
+          </Routes>
+      </div>
+      <div className="music-control-bar">
+        <Player />
+      </div>
+    </>
   );
 }
 
