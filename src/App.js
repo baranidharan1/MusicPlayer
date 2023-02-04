@@ -17,7 +17,7 @@ function App() {
       <div className="content-container">
           <Routes>
             <Route exact path='/' element={ <ProfilePage /> } />
-            <Route exact path='/invite' element={ <InvitePage /> } />
+            <Route exact path='/invite  ' element={ <InvitePage /> } />
           </Routes>
       </div>
       <div className="music-control-bar">
